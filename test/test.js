@@ -25,4 +25,12 @@ describe('Model', function(){
         model.set('name', name);
         assert.equal(name, model.get('name'));
     })
+
+    it('should throw error while set unexisting key', function(){
+        function err(){
+            model.set('wew', 'nothing');
+        };
+
+        assert.throws(err, Error);
+    })
 })
