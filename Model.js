@@ -17,10 +17,12 @@ function Model(val){
         },
 
         // on container
-        var on = {}
+        on = {},
 
-    // copy the value and check, it must be an object
-    var data = val;
+        // copy the value and check, it must be an object
+        data = val
+    ;
+
     if(is(data, 'object'))
         throw new Error('Argument must be an object');
 
