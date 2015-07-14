@@ -33,4 +33,10 @@ describe('Model', function(){
 
         assert.throws(err, Error);
     })
+
+    it('should add new key on data', function(){
+        var age = 30;
+        model.add('age', age);
+        assert.equal(age, model.get('age'));
+    })
 })
