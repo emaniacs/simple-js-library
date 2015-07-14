@@ -19,4 +19,10 @@ describe('Model', function(){
         };
         assert.throws(thr, Error);
     })
+
+    it('should return new single data', function(){
+        var name = 'Novi';
+        model.set('name', name);
+        assert.equal(name, model.get('name'));
+    })
 })
