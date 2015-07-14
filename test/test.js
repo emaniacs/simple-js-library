@@ -39,4 +39,13 @@ describe('Model', function(){
         model.add('age', age);
         assert.equal(age, model.get('age'));
     })
+
+    it('should return array on trigger single event', function(){
+        var expected = ['ok'];
+        model.on('change', function(){
+            return 'ok';
+        })
+
+        assert.deepEqual(expected, model.trigger('change'));
+    })
 })
