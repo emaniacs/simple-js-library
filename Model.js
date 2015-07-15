@@ -3,7 +3,8 @@
     else if (typeof define == 'function' && typeof define.amd == 'object') define(definition);
     else this[name] = definition();
 }('Model', function() {
-    'use strict'
+    'use strict';
+
     function Model(val){
         var 
             // get the real type
