@@ -62,4 +62,19 @@ describe('Model', function(){
 
         assert.deepEqual(expected, mm.trigger('change'));
     })
+    it('should return empty array on trigger() after off()', function(){
+        var expected = [];
+        var mm = new Model({});
+        mm.on('change', function(){
+            return 'ok';
+        })
+        mm.on('change', function(){
+            return 'ok';
+        })
+
+        mm.off('change');
+
+        assert.deepEqual(expected, mm.trigger('change'));
+    })
+
 })
