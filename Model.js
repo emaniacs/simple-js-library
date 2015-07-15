@@ -39,27 +39,27 @@
 
             data[key] = val;
             return this;
-        }
+        };
 
         // add new key into data
         this.add = function(key, val){
             data[key] = val;
             return this;
-        }
+        };
 
         // get the data
         this.get = function(key){
             if(!key) return data;
 
             return exist(data, key) ? data[key] : undefined;
-        }
+        };
 
         // set event
         this.on = function(name, cb){
             if(! exist(on, name))
                 on[name] = [];
             on[name].push(cb);
-        }
+        };
 
         // take care about this
         this.trigger = function(name){
@@ -69,7 +69,7 @@
                 })
 
             return [];
-        }
+        };
     }
 
     return Model;
