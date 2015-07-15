@@ -26,7 +26,7 @@
             on = {},
 
             // copy the value and check, it must be an object
-            data = val
+            data = val || {}
         ;
 
         if(! is(data, 'object'))
