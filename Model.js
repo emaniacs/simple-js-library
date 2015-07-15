@@ -70,12 +70,11 @@
 
         // take care about this
         this.trigger = function(name){
-            if(exist(on, name))
-                return on[name].map(function(cb){
+            return exist(on, name) ?
+                on[name].map(function(cb){
                     return cb();
                 })
-
-            return [];
+                : [];
         };
     }
 
