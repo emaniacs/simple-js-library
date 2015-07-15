@@ -42,10 +42,24 @@ describe('Model', function(){
 
     it('should return array on trigger single event', function(){
         var expected = ['ok'];
-        model.on('change', function(){
+        var mm = new Model({});
+        mm.on('change', function(){
             return 'ok';
         })
 
-        assert.deepEqual(expected, model.trigger('change'));
+        assert.deepEqual(expected, mm.trigger('change'));
+    })
+
+    it('should return array on trigger multiple event', function(){
+        var expected = ['ok', 'ok'];
+        var mm = new Model({});
+        mm.on('change', function(){
+            return 'ok';
+        })
+        mm.on('change', function(){
+            return 'ok';
+        })
+
+        assert.deepEqual(expected, mm.trigger('change'));
     })
 })
