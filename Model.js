@@ -61,6 +61,12 @@
             on[name].push(cb);
         };
 
+        // remove event
+        this.off = function(name) {
+            delete on[name];
+            return this;
+        };
+
         // take care about this
         this.trigger = function(name){
             if(exist(on, name))
