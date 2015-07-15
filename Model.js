@@ -59,6 +59,7 @@
             if(! exist(on, name))
                 on[name] = [];
             on[name].push(cb);
+            return this;
         };
 
         // remove event
